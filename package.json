@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brittneypostma/habitual-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
+  "bugs": {
+    "url": "https://github.com/brittneypostma/habitual-app/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  }
+  "homepage": "https://github.com/brittneypostma/habitual-app#readme"
 }
