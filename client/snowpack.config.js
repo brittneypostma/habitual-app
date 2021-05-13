@@ -1,6 +1,6 @@
 module.exports = {
   buildOptions: {
-    out: 'build/',
+    out: '../server/build/',
   },
   devOptions: {
     open: "none"
