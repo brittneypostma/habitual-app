@@ -2,13 +2,199 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habitual</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Landing page for Habitual Shopping App" />
+    <meta name="theme-color" content="#ffe202" />
+    <!-- Open Graph -->
+    <meta
+      property="og:url"
+      content="https://brittneypostma.github.io/habitual-landing-page/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brittney Postma" />
+    <meta
+      property="og:description"
+      content="Landing page for Habitual Shopping App"
+    />
+    <meta
+      property="og:image"
+      content="https://brittneypostma.github.io/habitual-landing-page/assets/images/og.jpg"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="brittneypostma.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://brittneypostma.github.io/habitual-landing-page/index.html"
+    />
+    <meta name="twitter:title" content="Brittney Postma" />
+    <meta
+      name="twitter:description"
+      content="Landing page for Habitual Shopping App"
+    />
+    <meta
+      name="twitter:image"
+      content="https://brittneypostma.github.io/habitual-landing-page/assets/images/og.jpg"
+    />
+    <!-- Site -->
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/site.webmanifest" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <!-- Scripts -->
+    <script defer src="js/nav-menu.js"></script>
+    <!-- GSAP -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
+    ></script>
+    <script defer src="js/animations.js"></script>
+
+    <title>Habitual Landing Page</title>
   </head>
+
   <body>
-    <main>
-      <h1>Habitual</h1>
+    <!-- *Header* -->
+    <header class="wrap">
+      <img src="./images/logo.png" alt="Habitual Logo" />
+    </header>
+
+    <!-- *Home Page* -->
+    <main class="grid wrap">
+      <!-- Hero -->
+      <img src="./images/circle.svg" alt="" class="circle" />
+      <div class="center">
+        <section class="hero">
+          <h1>
+            Make your style<br />
+            a habit.
+          </h1>
+          <p>
+            No need to rummage through irrelevant items anymore, we've got you
+            covered. Habitual sends you relevant items based off of your habits
+            and interests.
+          </p>
+          <div class="app">
+            <a href="#">
+              <img src="./images/googleplay.png" alt="Google Play" />
+            </a>
+            <a href="#">
+              <img src="./images/appstore.png" alt="Apple App Store" />
+            </a>
+          </div>
+        </section>
+        <section class="phone">
+          <img src="./images/phone.png" alt="phone mockup of Habitual app">
+        </section>
+      </div>
+      <!-- How it works -->
+      <section class="grid sub fade-up">
+      <h2>How it Works</h2>
+      <section class="grid works">
+        <div class="grid">
+          <img src="./images/account.png" alt="" />
+          <h3>Create an Account</h3>
+        </div>
+        <div class="grid">
+          <img src="./images/heart.png" alt="" />
+          <h3>Like Your Favorites</h3>
+        </div>
+        <div class="grid">
+          <img src="./images/shop.png" alt="" />
+          <h3>Shop Products</h3>
+        </div>
+        <div class="grid">
+          <img src="./images/pay.png" alt="" />
+          <h3>Easy Pay</h3>
+        </div>
+        <div class="grid">
+          <img src="./images/present.png" alt="" />
+          <h3>Enjoy</h3>
+        </div>
+        <section class="scroll-line">
+        <svg width="406" height="1042" viewBox="0 0 406 1042" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="67.1963" cy="12.6941" r="12.5" fill="black"/>
+          <circle cx="380.491" cy="244.698" r="12.5" fill="black"/>
+          <circle cx="12.5" cy="542.869" r="12.5" fill="black"/>
+          <circle cx="392.991" cy="785.718" r="12.5" fill="black"/>
+          <path d="M200.604 979.484L207.571 1000.92H230.115L211.877 1014.18L218.843 1035.62L200.604 1022.37L182.366 1035.62L189.332 1014.18L171.094 1000.92H193.638L200.604 979.484Z" fill="#FFE202"/>
+          <path d="M78.5849 14.8827C179.782 13.0343 373.244 30.0238 382.022 246.97C375.751 512.823 4.55892 277.799 7.886 548.592C10.594 768.995 388.552 521.367 393.266 784.256C397.143 1000.55 256.266 999.37 212.376 1014.42" stroke="black"/>
+          </svg>
+          
+        </svg>
+      </section>
+      </section>
+    </section>
+      <!-- Testimonials -->
+      <section class="grid sub">
+      <h2>Customers<br /><span class="title">are saying things...</span></h2>
+      <section class="grid testimonials">
+        <div class="grid testimonial animate-right">
+          <img src="./images/man.jpg" alt="man in a red shirt" />
+          <div>
+            <p class="quote">
+              Habitual is really amazing. It saves me time by allowing me to
+              only shop for the things I want. By adding my interests, Habitual
+              onlly shows my the items that fit into my categories.
+            </p>
+            <p class="name">Alexander Smith</p>
+          </div>
+        </div>
+        <div class="grid testimonial animate-left">
+          <div>
+            <p class="quote">
+              I absolutely love Habitual! There are so many deals that fit
+              exactly what I need. I love checking out what’s new everyday and
+              keeping up with the recent trends.
+            </p>
+            <p class="name">Brittney Postma</p>
+          </div>
+          <img src="./images/woman.jpg" alt="woman in a red shirt" />
+        </div>
+      </section>
+    </section>
+      <!-- Download -->
+      <section class="grid download fade-up">
+        <h2>Download.Favorite.Shop</h2>
+        <div class="app">
+          <a href="#">
+            <img src="./images/googleplay.png" alt="Google Play" />
+          </a>
+          <a href="#">
+            <img src="./images/appstore.png" alt="Apple App Store" />
+          </a>
+        </div>
+      </section>
     </main>
+    <!-- *Footer* -->
+    <footer>
+      <p class="text-sm">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        Habitual Inc.
+      </p>
+    </footer>
   </body>
 </html>

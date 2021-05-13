@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server src --verbose"
+    "dev": "snowpack dev",
+    "build": "snowpack build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "snowpack": "^3.3.7"
   }
 }
