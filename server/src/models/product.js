@@ -2,6 +2,29 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-/* Need an id, name, description, price,//Id is created by default in mongodb */
+// id is created by mongo
 
-const product = new Schema({ id: String, name: String, description: String, price: Number })
+const ProductSchema = new Schema({
+  title: {
+      type: String,
+      required: true
+  },
+  description: {
+      type: String,
+      required: true
+  },
+  category:{
+      type: String,
+      required: true
+  },
+  price: {
+      type: Number,
+      required: true
+  },
+  date_added: {
+      type: Date,
+      default: Date.now
+  },
+});
+
+module.exports = mongoose.model('Product', ProductSchema)
