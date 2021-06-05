@@ -24,5 +24,11 @@
     "url": "https://github.com/brittneypostma/habitual-app/issues"
   },
   "homepage": "https://github.com/brittneypostma/habitual-app#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "mongodb": "^3.6.9",
+    "pm2": "^4.5.6"
+  }
 }
