@@ -1,9 +1,9 @@
-// const items = require('../../models/items.model')
+const items = require('../../models/items.model')
 
-// function getItems(req, res) {
-//   return res.status(200).json(items)
-// }
+function getItems(req, res) {
+	return res.status(200).json(items)
+}
 
-// module.exports = {
-//   getItems
-// }
+module.exports = {
+	getItems
+}
