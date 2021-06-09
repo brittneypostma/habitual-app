@@ -9,10 +9,6 @@ const Item = new Schema({
 		type: String,
 		required: true
 	},
-	description: {
-		type: String,
-		required: true
-	},
 	category: {
 		type: String,
 		required: true
@@ -21,10 +17,9 @@ const Item = new Schema({
 		type: Number,
 		required: true
 	},
-	date_added: {
-		type: Date,
-		default: Date.now
-	}
+	category: String,
+	description: String,
+	image: String
 })
 
 module.exports = mongoose.model('Item', Item)
