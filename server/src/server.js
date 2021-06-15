@@ -1,3 +1,4 @@
+const fs = require('fs')
 const http = require('http')
 
 require('dotenv').config()
@@ -8,15 +9,21 @@ const { mongoConnect } = require('./services/mongo')
 
 const PORT = process.env.PORT || 8000
 
-const server = http.createServer(app)
+const server = http.createServer(
+  {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem'),
+  },
+  app
+)
 
 async function startServer() {
-	await mongoConnect()
-	// await models here
+  await mongoConnect()
+  // await models here
 
-	server.listen(PORT, () => {
-		console.log(`listening on port ${PORT}`)
-	})
+  server.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
+  })
 }
 
 startServer()

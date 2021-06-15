@@ -1,10 +1,10 @@
 const express = require('express')
 
 // require routers here
-const itemsRouter = require('./items/items.router')
+const itemRouter = require('./item/item.router')
 
 const api = express.Router()
 
-api.use('/items', itemsRouter)
+api.use('/items', itemRouter)
 
 module.exports = api
