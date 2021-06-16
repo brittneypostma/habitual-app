@@ -1,8 +1,8 @@
 const cors = require('cors')
 const express = require('express')
-const helmet = require('helmet')
 const path = require('path')
 const morgan = require('morgan')
+const helmet = require('helmet')
 
 const itemsRouter = require('./routes/item/item.router')
 
@@ -22,7 +22,8 @@ app.use(express.static(path.join(__dirname, '..', 'build')))
 app.use(itemsRouter)
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'))
+  // res.sendFile(path.join(__dirname, '..', 'build', 'index.html'))
+  res.send('Hellooooo')
 })
 
 module.exports = app

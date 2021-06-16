@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
+    "helmet": "^4.6.0",
     "mongodb": "^3.6.9",
     "pm2": "^4.5.6"
   }
