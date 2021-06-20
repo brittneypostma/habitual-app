@@ -1,5 +1,3 @@
-const fs = require('fs')
-const https = require('https')
 const cors = require('cors')
 const express = require('express')
 const path = require('path')
