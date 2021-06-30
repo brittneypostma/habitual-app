@@ -3,9 +3,17 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const helmet = require('helmet')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
 // const { auth } = require('express-openid-connect')
 // const itemsRouter = require('./routes/item/item.router')
-const routes = require('./routes/index')
+const routes = require('./routes/index.routes')
+const auth = require('./routes/auth.routes')
+
+//* Passport
+require('./services/passport')(passport)
+
 const app = express()
 
 app.use(helmet())
@@ -22,11 +30,26 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan(dev))
 } else app.use(morgan('combined'))
 
+//* Express Session
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+  })
+)
+
+//* Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
 //* Static Folder
 app.use(express.static(path.join(__dirname, '../../public')))
 
 //* Routes
 app.use('/', routes)
+app.use('/auth', auth)
 
 // app.use(express.json())
 // app.use(express.static(path.join(__dirname, '../client/src')))
