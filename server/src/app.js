@@ -3,8 +3,14 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const helmet = require('helmet')
-const { auth } = require('express-openid-connect')
-const itemsRouter = require('./routes/item/item.router')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+const routes = require('./routes/index.routes')
+const auth = require('./routes/auth.routes')
+
+//* Passport
+require('./services/passport')(passport)
 
 const app = express()
 
@@ -16,28 +22,31 @@ app.use(
     origin: 'http://localhost:3000',
   })
 )
-app.use(morgan('combined'))
-app.use(express.json())
-app.use(express.static(path.join(__dirname, '../client/src')))
+
+//* Logging
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan(dev))
+} else app.use(morgan('combined'))
+
+//* Express Session
 app.use(
-  auth({
-    authRequired: false,
-    auth0Logout: true,
-    issuerBaseURL: process.env.AUTH0_DOMAIN,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.AUTH0_CLIENT_ID,
+  session({
     secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   })
 )
 
-app.use(itemsRouter)
+//* Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
-app.get('/*', (req, res) => {
-  res.sendFile(
-    req.oidc.isAuthenticated()
-      ? path.join(__dirname, '../../client/src', 'home.html')
-      : path.join(__dirname, '../../client/src', 'index.html')
-  )
-})
+//* Static Folder
+app.use(express.static(path.join(__dirname, '../../public')))
+
+//* Routes
+app.use('/', routes)
+app.use('/auth', auth)
 
 module.exports = app

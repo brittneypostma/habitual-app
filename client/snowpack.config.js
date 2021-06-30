@@ -1,14 +1,14 @@
 module.exports = {
   buildOptions: {
-    out: '../server/build/',
+    out: '../public',
   },
   devOptions: {
-    open: "none"
+    open: 'none',
   },
   optimize: {
     bundle: true,
     minify: true,
     target: 'es2020',
   },
-  root: "src/",
+  root: 'src/',
 }
