@@ -6,8 +6,6 @@ const helmet = require('helmet')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
-// const { auth } = require('express-openid-connect')
-// const itemsRouter = require('./routes/item/item.router')
 const routes = require('./routes/index.routes')
 const auth = require('./routes/auth.routes')
 
@@ -50,28 +48,5 @@ app.use(express.static(path.join(__dirname, '../../public')))
 //* Routes
 app.use('/', routes)
 app.use('/auth', auth)
-
-// app.use(express.json())
-// app.use(express.static(path.join(__dirname, '../client/src')))
-// app.use(
-//   auth({
-//     authRequired: false,
-//     auth0Logout: true,
-//     issuerBaseURL: process.env.AUTH0_DOMAIN,
-//     baseURL: process.env.BASE_URL,
-//     clientID: process.env.AUTH0_CLIENT_ID,
-//     secret: process.env.SESSION_SECRET,
-//   })
-// )
-
-// app.use(itemsRouter)
-
-// app.get('/*', (req, res) => {
-//   res.sendFile(
-//     req.oidc.isAuthenticated()
-//       ? path.join(__dirname, '../../client/src', 'home.html')
-//       : path.join(__dirname, '../../client/src', 'index.html')
-//   )
-// })
 
 module.exports = app
