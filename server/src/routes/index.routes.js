@@ -4,31 +4,31 @@ const router = express.Router()
 const { ensureAuth, ensureGuest } = require('../middleware/auth.middleware')
 
 //* Login/Landing Page
-//* route GET /index
+//* route /index
 router.get('/', ensureGuest, (req, res) => {
   res.sendFile(path.join(__dirname, '../../../client/src', 'index.html'))
 })
 
 //* Onboarding
-//* route GET /welcome
+//* route /welcome
 router.get('/welcome', ensureGuest, (req, res) => {
   res.send('welcome')
 })
 
 //* Registration
-//* route GET /register
+//* route /register
 router.get('/register', ensureGuest, (req, res) => {
   res.send('register')
 })
 
 //* Cart
-//* route GET /cart
+//* route /cart
 router.get('/cart', ensureGuest, (req, res) => {
   res.send('cart')
 })
 
 //* Checkout
-//* route GET /checkout
+//* route /checkout
 router.get('/checkout', ensureGuest, (req, res) => {
   res.send('checkout')
 })
@@ -37,33 +37,31 @@ router.get('/checkout', ensureGuest, (req, res) => {
 //! User protected routes
 
 //* Home
-//* route GET /home
+//* route /home
 router.get('/home', ensureAuth, (req, res) => {
   res.sendFile(path.join(__dirname, '../../../client/src', 'home.html'))
 })
 
 //* Profile
-//* route GET /profile
+//* route /profile
 router.get('/profile', ensureAuth, (req, res) => {
   res.send('Login')
 })
 
-// could live under profile
-
 //* Wishlist
-//* route GET /wishlist
+//* route /wishlist
 router.get('/wishlist', ensureAuth, (req, res) => {
   res.send('Login')
 })
 
 //* Orders
-//* route GET /orders
+//* route /orders
 router.get('/orders', ensureAuth, (req, res) => {
   res.send('Login')
 })
 
 //* Interests
-//* route GET /interests
+//* route /interests
 router.get('/interests', ensureAuth, (req, res) => {
   res.send('Login')
 })
