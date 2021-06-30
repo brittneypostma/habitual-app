@@ -32,6 +32,8 @@ router.get('/checkout', (req, res) => {
   res.send('checkout')
 })
 
+// TODO search modal, category page
+
 //! user protected routes
 
 //* Profile
