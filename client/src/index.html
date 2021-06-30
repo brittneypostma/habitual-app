@@ -39,6 +39,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/home.css" />
 
     <!-- Font Awesome -->
     <link
@@ -66,13 +67,26 @@
     <title>Habitual</title>
   </head>
 
-  <body>
-    <!-- !If logged in navigate to home.html -->
-    <!-- !Else show index.html signup/login -->
+  <body style="background: red">
+    <!-- LOGGED IN -->
+    <h1>Index.html</h1>
     <!-- *Header* -->
     <header class="wrap"></header>
 
-    <main class="grid wrap"></main>
+    <!-- *Home Page* -->
+    <main class="grid wrap">
+      <!-- center is top left on mobile -->
+      <img src="./images/circle.svg" alt="" class="circle" />
+
+      <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
+      <!-- *If logged in show avatar, else show Log in with default icon. -->
+      <a href=""><img src="" alt="" /><span>Log in</span></a>
+      <!-- *If not logged in -->
+      <h2>Trending</h2>
+      <!-- *If logged in -->
+      <!-- <h2>Suggested for you</h2> -->
+      <h1>Find the stuff you love.</h1>
+    </main>
     <!-- *Footer* -->
     <footer>
       <p class="text-sm">
