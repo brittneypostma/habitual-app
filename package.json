@@ -10,7 +10,7 @@
     "client": "npm run dev --prefix client",
     "server": "npm run dev --prefix server",
     "start": "cross-env NODE_ENV=production npm run start --prefix server",
-    "dev": "cross-env NODE_ENV=development npm run dev --prefix server",
+    "dev": "cross-env NODE_ENV=development npm run dev --prefix server & npm run watch --prefix client",
     "old-dev": "npm run dev --prefix server & npm run dev --prefix client",
     "deploy": "npm run build --prefix client && npm start --prefix server",
     "test": "npm run test --prefix server && npm run test --prefix client"
