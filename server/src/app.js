@@ -6,11 +6,11 @@ const helmet = require('helmet')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
-const homeRoute = require('./routes/home.routes')
-const itemRoute = require('./routes/item.routes')
-const cartRoute = require('./routes/cart.routes')
-const userRoute = require('./routes/user.routes')
-const authRoute = require('./routes/auth.routes')
+const homeRoutes = require('./routes/home.routes')
+const itemRoutes = require('./routes/item.routes')
+const cartRoutes = require('./routes/cart.routes')
+const userRoutes = require('./routes/user.routes')
+const authRoutes = require('./routes/auth.routes')
 
 //* Passport
 require('./services/passport')(passport)
@@ -49,10 +49,10 @@ app.use(passport.session())
 app.use(express.static(path.join(__dirname, '../../public')))
 
 //* Routes
-app.use('/auth', authRoute)
-app.use('/', homeRoute)
-app.use('/item', itemRoute)
-app.use('/carts', cartRoute)
-app.use('/users', userRoute)
+app.use('/auth', authRoutes)
+app.use('/', homeRoutes)
+app.use('/shop', itemRoutes)
+app.use('/cart', cartRoutes)
+app.use('/profile', userRoutes)
 
 module.exports = app
