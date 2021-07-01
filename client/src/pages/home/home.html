@@ -48,7 +48,7 @@
     />
 
     <!-- Scripts -->
-    <script defer src="js/nav-menu.js"></script>
+    <script defer src="../../js/nav-menu.js"></script>
     <!-- GSAP -->
     <script
       defer
@@ -62,7 +62,8 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
     ></script>
-    <script defer src="js/animations.js"></script>
+    <script defer src="../../js/animations.js"></script>
+    <script src="../../js/templates.js"></script>
 
     <title>Habitual</title>
   </head>
@@ -70,38 +71,39 @@
   <body>
     <!-- LOGGED IN -->
     <!-- *Header* -->
-    <header class="wrap"></header>
+    <layout-component>
+      <!-- <header class="wrap"></header> -->
+      <!-- *Home Page* -->
+      <main class="grid wrap">
+        <!-- center is top left on mobile -->
+        <img src="./images/circle.svg" alt="" class="circle" />
 
-    <!-- *Home Page* -->
-    <main class="grid wrap">
-      <!-- center is top left on mobile -->
-      <img src="./images/circle.svg" alt="" class="circle" />
-
-      <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
-      <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google">
-        Log in
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <a href="/auth/logout">
-        Log out
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <!-- *If not logged in -->
-      <h2>Trending</h2>
-      <!-- *If logged in -->
-      <!-- <h2>Suggested for you</h2> -->
-      <h1>Find the stuff you love.</h1>
-    </main>
-    <!-- *Footer* -->
-    <footer>
-      <p class="text-sm">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        Habitual Inc.
-      </p>
-    </footer>
+        <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
+        <!-- *If logged in show avatar, else show Log in with default icon. -->
+        <a href="/auth/google">
+          Log in
+          <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
+        </a>
+        <a href="/auth/logout">
+          Log out
+          <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
+        </a>
+        <!-- *If not logged in -->
+        <h2>Trending</h2>
+        <!-- *If logged in -->
+        <!-- <h2>Suggested for you</h2> -->
+        <h1>Find the stuff you love.</h1>
+      </main>
+      <!-- *Footer* -->
+      <footer>
+        <p class="text-sm">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          Habitual Inc.
+        </p>
+      </footer>
+    </layout-component>
   </body>
 </html>
