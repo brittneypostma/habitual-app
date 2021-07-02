@@ -1,23 +1,25 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const Item = require('./item.model')
-const { schema } = require('./user.model')
 const User = require('./user.model')
+
+// mongoose will automatically set id
 
 const CartSchema = new Schema({
   userId: {
-    type: schema.Types.Number,
+    type: Schema.Types.ObjectId,
     ref: User,
     required: true,
   },
   date: {
     type: Date,
     required: true,
+    default: new Date(),
   },
   items: [
     {
       itemId: {
-        type: schema.Types.Number,
+        type: Schema.Types.ObjectId,
         ref: Item,
         required: true,
       },
