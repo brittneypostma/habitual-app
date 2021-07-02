@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-// id is created by mongo
+// mongoose will automatically set id
 
 const ItemSchema = new Schema({
   title: {
@@ -17,7 +17,6 @@ const ItemSchema = new Schema({
     type: Number,
     required: true,
   },
-  category: String,
   description: String,
   image: String,
 })
