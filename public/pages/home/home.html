@@ -33,13 +33,13 @@
       content="https://brittneypostma.github.io/habitual-landing-page/images/og.jpg"
     />
     <!-- Site -->
-    <link rel="icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
     <!-- Styles -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
 
     <!-- Font Awesome -->
     <link
@@ -48,7 +48,7 @@
     />
 
     <!-- Scripts -->
-    <script defer src="../../js/nav-menu.js"></script>
+    <script defer src="assets/js/nav-menu.js"></script>
     <!-- GSAP -->
     <script
       defer
@@ -62,48 +62,47 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
     ></script>
-    <script defer src="../../js/animations.js"></script>
-    <script src="../../js/templates.js"></script>
+    <script defer src="js/animations.js"></script>
 
     <title>Habitual</title>
   </head>
 
   <body>
     <!-- LOGGED IN -->
+    <h1>Home.html</h1>
     <!-- *Header* -->
-    <layout-component>
-      <!-- <header class="wrap"></header> -->
-      <!-- *Home Page* -->
-      <main class="grid wrap">
-        <!-- center is top left on mobile -->
-        <img src="./images/circle.svg" alt="" class="circle" />
+    <header class="wrap"></header>
 
-        <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
-        <!-- *If logged in show avatar, else show Log in with default icon. -->
-        <a href="/auth/google">
-          Log in
-          <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-        </a>
-        <a href="/auth/logout">
-          Log out
-          <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-        </a>
-        <!-- *If not logged in -->
-        <h2>Trending</h2>
-        <!-- *If logged in -->
-        <!-- <h2>Suggested for you</h2> -->
-        <h1>Find the stuff you love.</h1>
-      </main>
-      <!-- *Footer* -->
-      <footer>
-        <p class="text-sm">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>
-          Habitual Inc.
-        </p>
-      </footer>
-    </layout-component>
+    <!-- *Home Page* -->
+    <main class="grid wrap">
+      <!-- center is top left on mobile -->
+      <img src="./images/circle.svg" alt="" class="circle" />
+
+      <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
+      <!-- *If logged in show avatar, else show Log in with default icon. -->
+      <a href="/auth/google">
+        Log in
+        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
+      </a>
+      <a href="/auth/logout">
+        Log out
+        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
+      </a>
+      <!-- *If not logged in -->
+      <h2>Trending</h2>
+      <!-- *If logged in -->
+      <!-- <h2>Suggested for you</h2> -->
+      <h1>Find the stuff you love.</h1>
+    </main>
+    <!-- *Footer* -->
+    <footer>
+      <p class="text-sm">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        Habitual Inc.
+      </p>
+    </footer>
   </body>
 </html>

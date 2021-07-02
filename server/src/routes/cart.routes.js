@@ -1,19 +1,16 @@
 const express = require('express')
 const router = express.Router()
-// const cart = require('../controller/cart')
-const { ensureGuest } = require('../controllers/auth.controller')
+const cart = require('../controllers/cart.controller')
+// const { ensureGuest } = require('../controllers/auth.controller')
 
 //* Cart
 //* route /cart
-router.get('/cart', ensureGuest, (req, res) => {
-  res.send('cart')
-})
+// router.get('/', cart.cartPage)
+router.get('/', cart.cartPage)
 
 //* Checkout
 //* route /checkout
-router.get('/checkout', ensureGuest, (req, res) => {
-  res.send('checkout')
-})
+// router.get('/checkout', cart.checkoutPage)
 
 // router.get('/',cart.getAllCarts)
 // router.get('/:id',cart.getSingleCart)
