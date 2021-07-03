@@ -2,14 +2,12 @@ const path = require('path')
 const Cart = require('../models/cart.mongo')
 
 exports.cartPage = (req, res) => {
-  res.sendFile(
-    path.join(__dirname, '../../../client/src/pages/cart', 'cart.html')
-  )
+  res.sendFile(path.join(__dirname, '../../client/src/pages/cart', 'cart.html'))
 }
 
 // exports.checkoutPage = (req, res) => {
 //   res.sendFile(
-//     path.join(__dirname, '../../../client/src/pages/cart', 'checkout.html')
+//     path.join(__dirname, '../../client/src/pages/cart', 'checkout.html')
 //   )
 // }
 
@@ -22,9 +20,7 @@ exports.getCart = async (req, res) => {
       .catch((e) => console.error(e))
   } catch (e) {
     console.error(e)
-    res.sendFile(
-      path.join(__dirname, '../../../client/src/pages', 'error.html')
-    )
+    res.sendFile(path.join(__dirname, '../../client/src/pages', 'error.html'))
   }
 }
 
@@ -35,9 +31,7 @@ exports.addCart = async (req, res) => {
     await Cart.create(req.body)
   } catch (e) {
     console.error(e)
-    res.sendFile(
-      path.join(__dirname, '../../../client/src/pages', 'error.html')
-    )
+    res.sendFile(path.join(__dirname, '../../client/src/pages', 'error.html'))
   }
 }
 
@@ -49,7 +43,7 @@ exports.editCart = async (req, res) => {
     }
     if (cart.user !== req.user.id) {
       res.sendFile(
-        path.join(__dirname, '../../../client/src/pages/cart', 'cart.html')
+        path.join(__dirname, '../../client/src/pages/cart', 'cart.html')
       )
     } else {
       cart = await Cart.findOneAndUpdate({ _id: req.params.id }, req.body, {
@@ -57,14 +51,12 @@ exports.editCart = async (req, res) => {
         runValidators: true,
       })
       res.sendFile(
-        path.join(__dirname, '../../../client/src/pages/cart', 'cart.html')
+        path.join(__dirname, '../../client/src/pages/cart', 'cart.html')
       )
     }
   } catch (e) {
     console.error(e)
-    res.sendFile(
-      path.join(__dirname, '../../../client/src/pages', 'error.html')
-    )
+    res.sendFile(path.join(__dirname, '../../client/src/pages', 'error.html'))
   }
 }
 
