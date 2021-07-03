@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node server/server.js",
     "dev": "cross-env NODE_ENV=development nodemon server/server.js",
-    "build": "cross-env NODE_ENV=production esbuild index.js --bundle --platform=node --target=node16.3 --minify --sourcemap --outfile=public/index.js --loader:.html=text"
+    "watch": "snowpack build --watch"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
   "homepage": "https://github.com/brittneypostma/habitual-app#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "esbuild": "^0.12.14",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "snowpack": "^3.7.1"
   },
   "dependencies": {
     "connect-mongo": "^4.4.1",
