@@ -39,7 +39,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <!-- <link rel="stylesheet" href="assets/css/home.css" /> -->
 
     <!-- Font Awesome -->
     <link
@@ -67,43 +67,77 @@
 
     <title>Habitual</title>
   </head>
+  <style>
+    main,
+    div {
+      display: grid;
+    }
+    .heading {
+      gap: 28px;
+      padding: var(--xs);
+    }
+    img {
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .bg-home {
+      width: 100vw;
+      max-width: 600px;
+    }
+    footer {
+      display: flex;
+      justify-content: start;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .sign-up {
+      margin-top: 76px;
+    }
+    button,
+    a[role='button'] {
+      max-width: 327px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1080px) {
+      main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-items: start;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      div {
+        place-items: center;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        max-width: 400px;
+      }
+    }
+  </style>
 
   <body>
-    <!-- LOGGED IN -->
-    <h1>Index.html</h1>
-    <!-- *Header* -->
-    <header class="wrap"></header>
-
-    <!-- *Home Page* -->
-    <main class="grid wrap">
-      <!-- center is top left on mobile -->
-      <img src="./images/circle.svg" alt="" class="circle" />
-
-      <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
-      <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google">
-        Log in
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <a href="/auth/logout">
-        Log out
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <!-- *If not logged in -->
-      <h2>Trending</h2>
-      <!-- *If logged in -->
-      <!-- <h2>Suggested for you</h2> -->
-      <h1>Find the stuff you love.</h1>
+    <!-- LOGGED OUT -->
+    <main>
+      <img class="bg-home" src="./assets/images/global/circles.png" alt="" />
+      <div class="heading">
+        <img src="./assets/images/global/logo.png" />
+        <h1>Whatever you love, we have it.</h1>
+        <a role="button" href="/auth/google" class="sign-up">Sign up</a>
+        <footer>
+          <p>Already have an account?</p>
+          <a href="/auth/google">Log in</a>
+        </footer>
+      </div>
     </main>
-    <!-- *Footer* -->
-    <footer>
-      <p class="text-sm">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        Habitual Inc.
-      </p>
-    </footer>
   </body>
 </html>

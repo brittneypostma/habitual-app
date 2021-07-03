@@ -4,13 +4,13 @@
 :root {
   /* VARIABLES */
   /* *Colors* */
-  --accent: #30D6B0;
+  --accent: #30d6b0;
   --primary: #ffe202;
-  --secondary: #5FA1D5;
+  --secondary: #5fa1d5;
   --gradient1: #072141;
   --gradient2: #020c17;
-  --error: #FE8668;
-  --success: #51B960;
+  --error: #fe8668;
+  --success: #51b960;
   --black: #000000;
   --white: #ffffff;
 
@@ -20,8 +20,8 @@
   --center-column: min(80ch, calc(100vw - 1rem));
 
   /* *Font Family* */
-  --font-heading: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -31,7 +31,7 @@
   --heading-3: clamp(1.5rem, 1.5rem + 2vw, 3rem);
   --heading-4: clamp(1rem, 1rem + 2vw, 2.5rem);
   --text-lg: clamp(1.25rem, 1.25 + 1vw, 2rem);
-  --text-base: clamp(1rem, 1rem + 1vw, 1.5rem);
+  --text-base: clamp(1rem, 1rem + 0.5vw, 1.5rem);
   --text-sm: clamp(0.75rem, 0.75rem + 1vw, 1rem);
 
   /* *Letter Spacing* */
@@ -48,12 +48,13 @@
   --rounded-sm: 0.25rem;
 
   /* *Shadows* */
-  --shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.10);
+  --shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
   --shadow-active: 0 3px 15px 0 rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 7px 0 rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-md:  0 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0,0,0,0.04);
-  --shadow-lg: 0 16px 24px 0 rgba(0,0,0,0.06), 0 2px 6px 0 rgba(0,0,0,0.04), 0 0 1px 0 rgba(0,0,0,0.04);
+  --shadow-md: 0 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 16px 24px 0 rgba(0, 0, 0, 0.06),
+    0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 0 1px 0 rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-outline: 0 0 0 2px var(--accent);
 
@@ -108,16 +109,6 @@ body {
   color: var(--text-color);
 }
 
-header {
-  padding: var(--base);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer {
-  padding: var(--xxxl);
-}
 .wrap {
   width: 100%;
   max-width: var(--max-width);
@@ -127,53 +118,6 @@ footer {
 /* *Links and Buttons* */
 :focus {
   outline: none;
-}
-
-button:focus,
-input[type='submit']:focus {
-  box-shadow: var(--shadow-outline);
-}
-
-button {
-  background: var(--btn-bg);
-  color: var(--white);
-  padding: var(--base);
-  border-radius: var(--rounded-pill);
-  border: none;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-button:hover {
-  filter: var(--btn-hover);
-  box-shadow: var(--shadow-sm);
-}
-
-button[role='button'] {
-  color: var(--white);
-}
-
-button[role='button']::before {
-  background: transparent;
-}
-
-/* *Footer Styles* */
-footer {
-  display: flex;
-  justify-content: center;
-}
-
-/* *Text* */
-.accent-text {
-  color: var(--accent);
-  letter-spacing: var(--loose);
-  font-weight: 800;
-}
-
-.body-text {
-  font-family: var(--font-body);
-  font-weight: 200;
 }
 
 h1,
@@ -188,7 +132,8 @@ h6 {
   line-height: 1.5;
 }
 
-h2, h3 {
+h2,
+h3 {
   text-align: center;
 }
 
@@ -215,4 +160,31 @@ h4 {
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+}
+
+a:not(a[role='button']) {
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  color: var(--black);
+  width: max-content;
+}
+
+button,
+a[role='button'] {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  background: var(--primary);
+  color: var(--black);
+  width: 100%;
+  font-weight: 700;
+  padding: 14px 24px;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover,
+a[role='button']:hover {
+  filter: brightness(1.02);
 }
