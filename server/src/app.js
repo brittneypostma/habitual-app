@@ -7,7 +7,7 @@ const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const homeRoutes = require('./routes/home.routes')
-const itemRoutes = require('./routes/item.routes')
+const productRoutes = require('./routes/product.routes')
 const cartRoutes = require('./routes/cart.routes')
 const userRoutes = require('./routes/user.routes')
 const authRoutes = require('./routes/auth.routes')
@@ -27,9 +27,6 @@ app.use(
 )
 
 //* Logging
-// if (process.env.NODE_ENV === 'development') {
-//   app.use(morgan(dev))
-// } else app.use(morgan('combined'))
 app.use(morgan('combined'))
 //* Express Session
 app.use(
@@ -51,7 +48,7 @@ app.use(express.static(path.join(__dirname, '../../public')))
 //* Routes
 app.use('/auth', authRoutes)
 app.use('/', homeRoutes)
-app.use('/shop', itemRoutes)
+app.use('/shop', productRoutes)
 app.use('/cart', cartRoutes)
 app.use('/profile', userRoutes)
 

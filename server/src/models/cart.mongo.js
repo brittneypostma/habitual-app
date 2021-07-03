@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const Item = require('./item.model')
-const User = require('./user.model')
+const Product = require('./product.mongo')
+const User = require('./user.mongo')
 
 // mongoose will automatically set id
 
@@ -16,11 +16,11 @@ const CartSchema = new Schema({
     required: true,
     default: new Date(),
   },
-  items: [
+  products: [
     {
-      itemId: {
+      productId: {
         type: Schema.Types.ObjectId,
-        ref: Item,
+        ref: Product,
         required: true,
       },
       quantity: {

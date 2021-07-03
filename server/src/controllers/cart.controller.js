@@ -1,5 +1,5 @@
 const path = require('path')
-const Cart = require('../models/cart.model')
+const Cart = require('../models/cart.mongo')
 
 module.exports.cartPage = (req, res) => {
   res.sendFile(
