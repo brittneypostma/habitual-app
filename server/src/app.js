@@ -48,8 +48,8 @@ app.use(express.static(path.join(__dirname, '../../public')))
 //* Routes
 app.use('/auth', authRoutes)
 app.use('/', homeRoutes)
+app.use('/', userRoutes)
 app.use('/shop', productRoutes)
 app.use('/cart', cartRoutes)
-app.use('/profile', userRoutes)
 
 module.exports = app

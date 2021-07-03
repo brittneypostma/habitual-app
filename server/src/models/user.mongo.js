@@ -40,6 +40,20 @@ const UserSchema = new Schema({
       name: String,
     },
   ],
+  orders: [
+    {
+      _id: String,
+      placedAt: Date,
+      items: [
+        {
+          item: {
+            name: String,
+            price: Number,
+          },
+        },
+      ],
+    },
+  ],
   wishlist: [
     {
       products: [

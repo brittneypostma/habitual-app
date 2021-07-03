@@ -1,35 +1,27 @@
 const express = require('express')
-const router = express.Router()
-// const user = require('../controller/user')
+const userRouter = express.Router()
+const userController = require('../controllers/user.controller')
 const { ensureAuth } = require('../controllers/auth.controller')
 
-router.get('/profile', ensureAuth, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../client/src', 'profile.html'))
-})
+userRouter.get('/profile', ensureAuth, userController.getUserPage)
+userRouter.get('/profile/:userId', ensureAuth, userController.getUserProfile)
+userRouter.get('/wishlist', ensureAuth, userController.getWishlistPage)
+userRouter.get('/wishlist/:userId', ensureAuth, userController.getUserWishlist)
+userRouter.get('/interests', ensureAuth, userController.getInterestsPage)
+userRouter.get(
+  '/interests/:userId',
+  ensureAuth,
+  userController.getUserInterests
+)
+userRouter.get('/orders', ensureAuth, userController.getOrdersPage)
+userRouter.get('/orders/:userId', ensureAuth, userController.getUserOrders)
 
-//* Wishlist
-//* route /wishlist
-router.get('/wishlist', ensureAuth, (req, res) => {
-  res.send('Login')
-})
+module.exports = userRouter
 
-//* Orders
-//* route /orders
-router.get('/orders', ensureAuth, (req, res) => {
-  res.send('Login')
-})
-
-//* Interests
-//* route /interests
-router.get('/interests', ensureAuth, (req, res) => {
-  res.send('Login')
-})
-
-// router.get('/',user.getAllUser)
-// router.get('/:id',user.getUser)
+//* taken care of by /services/passport
 // router.post('/',user.addUser)
-// router.put('/:id',user.editUser)
-// router.patch('/:id',user.editUser)
-// router.delete('/:id',user.deleteUser)
 
-module.exports = router
+// TODO user, wishlist, interests, orders
+//! router.post('/:id', user.add)
+//! router.patch('/:id',user.edit)
+//! router.delete('/:id',user.delete)
