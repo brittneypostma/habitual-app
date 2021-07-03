@@ -42,8 +42,8 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-//* Static Folder
-app.use(express.static(path.join(__dirname, '../build')))
+//* Static Folder (this is what serves the css/images/js)
+app.use(express.static(path.join(__dirname, '../client/src')))
 
 //* Routes
 app.use('/auth', authRoutes)
