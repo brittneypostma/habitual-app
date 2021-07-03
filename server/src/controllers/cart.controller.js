@@ -1,19 +1,19 @@
 const path = require('path')
 const Cart = require('../models/cart.mongo')
 
-module.exports.cartPage = (req, res) => {
+exports.cartPage = (req, res) => {
   res.sendFile(
     path.join(__dirname, '../../../client/src/pages/cart', 'cart.html')
   )
 }
 
-// module.exports.checkoutPage = (req, res) => {
+// exports.checkoutPage = (req, res) => {
 //   res.sendFile(
 //     path.join(__dirname, '../../../client/src/pages/cart', 'checkout.html')
 //   )
 // }
 
-module.exports.getCart = async (req, res) => {
+exports.getCart = async (req, res) => {
   try {
     const id = req.params.id
     const cart = await Cart.findOne({ id })
@@ -28,7 +28,7 @@ module.exports.getCart = async (req, res) => {
   }
 }
 
-module.exports.addCart = async (req, res) => {
+exports.addCart = async (req, res) => {
   try {
     req.body.user = req.user.id
     console.log(req.body)
@@ -41,7 +41,7 @@ module.exports.addCart = async (req, res) => {
   }
 }
 
-module.exports.editCart = async (req, res) => {
+exports.editCart = async (req, res) => {
   try {
     let cart = await Cart.findById(req.params.id).lean()
     if (!cart) {
@@ -65,5 +65,21 @@ module.exports.editCart = async (req, res) => {
     res.sendFile(
       path.join(__dirname, '../../../client/src/pages', 'error.html')
     )
+  }
+}
+
+exports.deleteCart = (req, res) => {
+  if (req.params.id == null) {
+    res.json({
+      status: 'error',
+      message: 'cart id should be provided',
+    })
+  } else {
+    Cart.remove({ id: req.params.id })
+      .exec()
+      .then(() => {
+        res.redirect('/')
+      })
+      .catch((e) => console.error(e))
   }
 }

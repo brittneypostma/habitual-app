@@ -5,7 +5,11 @@ const { ensureAuth } = require('../controllers/auth.controller')
 
 productRouter.get('/', productController.getAllProducts)
 productRouter.get('/:productId', productController.getOneProduct)
-productRouter.post('/', ensureAuth, productController.createOneProduct)
+productRouter.post(
+  '/:productId',
+  ensureAuth,
+  productController.createOneProduct
+)
 productRouter.patch(
   '/:productId',
   ensureAuth,
