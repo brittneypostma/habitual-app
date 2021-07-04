@@ -1,0 +1,220 @@
+{
+  "shoes": [
+    {
+      "name": "Pink and Gold Laceup",
+      "category": "Shoes",
+      "image": "assets/images/shoes/shoe1.jpg",
+      "price": 120,
+      "countInStock": 10,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "name": "Brown Leather Laceup",
+      "category": "Shoes",
+      "image": "assets/images/shoes/shoe2.jpg",
+      "price": 100,
+      "countInStock": 20,
+      "rating": 4,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Brown Leather Boot",
+      "category": "Shoes",
+      "image": "assets/images/shoes/shoe3.jpg",
+      "price": 220,
+      "countInStock": 0,
+      "rating": 4.8,
+      "numReviews": 17,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Black Pump",
+      "category": "Shoes",
+      "image": "assets/images/shoes/shoe4.jpg",
+      "price": 78,
+      "countInStock": 15,
+      "rating": 4.5,
+      "numReviews": 14,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Black Leather Laceup",
+      "category": "Shoes",
+      "image": "assets/images/shoes/shoe5.jpg",
+      "price": 65,
+      "countInStock": 5,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  ],
+  "fashion": [
+    {
+      "name": "Blue and White Tulip Dress",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion1.jpg",
+      "price": 120,
+      "countInStock": 10,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Round Sunglasses",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion2.jpg",
+      "price": 100,
+      "countInStock": 20,
+      "rating": 4,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Teal Oversized Sunglasses",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion3.jpg",
+      "price": 220,
+      "countInStock": 0,
+      "rating": 4.8,
+      "numReviews": 17,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Pink Tint Wire Sunglasses",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion4.jpg",
+      "price": 78,
+      "countInStock": 15,
+      "rating": 4.5,
+      "numReviews": 14,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Floral Dress",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion5.jpg",
+      "price": 65,
+      "countInStock": 5,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Navy Suit",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion6.jpg",
+      "price": 139,
+      "countInStock": 12,
+      "rating": 4.5,
+      "numReviews": 15,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Brown Leather Jacket",
+      "category": "Fashion",
+      "image": "assets/images/fashion/fashion7.jpg",
+      "price": 139,
+      "countInStock": 12,
+      "rating": 4.5,
+      "numReviews": 15,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  ],
+  "music": [
+    {
+      "name": "Modern Record Player",
+      "category": "Music",
+      "image": "assets/images/music/music1.jpg",
+      "price": 120,
+      "countInStock": 10,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Vintage Microphone",
+      "category": "Music",
+      "image": "assets/images/music/music2.jpg",
+      "price": 100,
+      "countInStock": 20,
+      "rating": 4,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "White Record Player",
+      "category": "Music",
+      "image": "assets/images/music/music3.jpg",
+      "price": 220,
+      "countInStock": 0,
+      "rating": 4.8,
+      "numReviews": 17,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Vintage Record Collection",
+      "category": "Music",
+      "image": "assets/images/music/music4.jpg",
+      "price": 78,
+      "countInStock": 15,
+      "rating": 4.5,
+      "numReviews": 14,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  ],
+  "gaming": [
+    {
+      "name": "Rainbow Keyboard",
+      "category": "Gaming",
+      "image": "assets/images/gaming/gaming1.jpg",
+      "price": 120,
+      "countInStock": 10,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Game Controller",
+      "category": "Gaming",
+      "image": "assets/images/gaming/gaming2.jpg",
+      "price": 100,
+      "countInStock": 20,
+      "rating": 4,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Headphones",
+      "category": "Gaming",
+      "image": "assets/images/gaming/gaming3.jpg",
+      "price": 220,
+      "countInStock": 0,
+      "rating": 4.8,
+      "numReviews": 17,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Ergonomic Chair",
+      "category": "Gaming",
+      "image": "assets/images/gaming/gaming4.jpg",
+      "price": 78,
+      "countInStock": 15,
+      "rating": 4.5,
+      "numReviews": 14,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "name": "Red, White, and Blue Keyboard",
+      "category": "Gaming",
+      "image": "assets/images/gaming/gaming5.jpg",
+      "price": 65,
+      "countInStock": 5,
+      "rating": 4.5,
+      "numReviews": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  ]
+}

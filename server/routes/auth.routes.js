@@ -13,6 +13,7 @@ router.get(
   '/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
+    // check if new user
     res.redirect('/home')
   }
 )

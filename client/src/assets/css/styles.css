@@ -4,15 +4,16 @@
 :root {
   /* VARIABLES */
   /* *Colors* */
-  --accent: #30d6b0;
   --primary: #ffe202;
-  --secondary: #5fa1d5;
-  --gradient1: #072141;
-  --gradient2: #020c17;
+  --secondary: #cbcbd4;
   --error: #fe8668;
   --success: #51b960;
-  --black: #000000;
+  --black: #3a3a3a;
   --white: #ffffff;
+  --red: #fe8668;
+  --teal: #30d6b0;
+  --blue: #4269f2;
+  --orange: #fdbc1f;
 
   /* *Containers* */
   --width: 80vw;
@@ -46,6 +47,7 @@
   --rounded-lg: 1rem;
   --rounded-md: 0.5rem;
   --rounded-sm: 0.25rem;
+  --rounded-card: 10px;
 
   /* *Shadows* */
   --shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
@@ -57,6 +59,10 @@
     0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 0 1px 0 rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-outline: 0 0 0 2px var(--accent);
+  --shadow-card: 0px 10px 20px rgba(0, 0, 0, 0.04),
+    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-interest: 0px 16px 24px rgba(0, 0, 0, 0.06),
+    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 
   /* *Spacing* */
   --xxs: 0.25rem;
@@ -132,11 +138,6 @@ h6 {
   line-height: 1.5;
 }
 
-h2,
-h3 {
-  text-align: center;
-}
-
 h1 {
   font-size: var(--heading-1);
 }
@@ -187,4 +188,12 @@ a[role='button'] {
 button:hover,
 a[role='button']:hover {
   filter: brightness(1.02);
+}
+
+.badge {
+  border-radius: var(--rounded-pill);
+  font-weight: 800;
+  font-size: var(--text-sm);
+  padding: var(--xxs) var(--xs);
+  color: var(--white);
 }

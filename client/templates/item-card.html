@@ -1,0 +1,35 @@
+<style>
+  .item-cards {
+    display: flex;
+    overflow-x: scroll;
+    gap: var(--base);
+  }
+  .item-card {
+    box-shadow: var(--shadow-card);
+    border-radius: var(--rounded-card);
+    max-width: 285px;
+  }
+  .item-img {
+    width: 300px;
+    border-top: var(--rounded-card);
+    max-height: 150px;
+    object-fit: cover;
+    object-position: center 10%;
+  }
+</style>
+
+<template id="item-cards">
+  <article class="item-card">
+    <img class="item-img" src="" alt="" />
+    <section>
+      <h3 class="item-name"></h3>
+      <div>
+        <h3 class="item-price"></h3>
+        <p class="linethrough-price"></p>
+        <p class="badge"><span class="category"></span></p>
+      </div>
+      <p class="item-description"></p>
+    </section>
+    <!-- TODO reviews section -->
+  </article>
+</template>

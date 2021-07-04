@@ -34,23 +34,26 @@
     />
     <!-- Site -->
     <link rel="icon" href="assets/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
-    <link rel="manifest" href="./site.webmanifest" />
+    <link
+      rel="apple-touch-icon"
+      href="assets/images/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/site.webmanifest" />
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
 
     <!-- Font Awesome -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+    /> -->
 
     <!-- Scripts -->
-    <script defer src="assets/js/nav-menu.js"></script>
+    <!-- <script defer src="assets/js/nav-menu.js"></script> -->
     <!-- GSAP -->
-    <script
+    <!-- <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
     ></script>
@@ -62,10 +65,44 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
     ></script>
-    <script defer src="js/animations.js"></script>
-
+    <script defer src="assets/js/animations.js"></script> -->
+    <script type="module" src="assets/js/products.js"></script>
     <title>Habitual</title>
   </head>
+  <style>
+    .item-cards {
+      display: flex;
+      overflow-x: auto;
+      gap: var(--base);
+    }
+    .item-card {
+      --item-width: 285px;
+      box-shadow: var(--shadow-card);
+      border-radius: var(--rounded-card);
+      max-width: var(--item-width);
+    }
+    .item-img {
+      width: var(--item-width);
+      border-radius: var(--rounded-card) var(--rounded-card) 0 0;
+      max-height: 150px;
+      object-fit: cover;
+      object-position: center 10%;
+    }
+    .item-content {
+      background: var(--white);
+      padding: var(--base);
+      display: grid;
+      gap: var(--xxs);
+    }
+    .item-name {
+      font-weight: 400;
+      font-size: var(--text-base);
+    }
+    .item-price {
+      font-weight: 800;
+      font-size: var(--text-base);
+    }
+  </style>
 
   <body>
     <!-- LOGGED IN -->
@@ -74,25 +111,39 @@
     <header class="wrap"></header>
 
     <!-- *Home Page* -->
-    <main class="grid wrap">
+    <main>
       <!-- center is top left on mobile -->
-      <img src="./images/circle.svg" alt="" class="circle" />
+      <svg
+        class="circle"
+        viewBox="0 0 2500 5000"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="1500" cy="1500" r="2500" fill="#FFE202" />
+      </svg>
 
-      <!-- <img src="./images/logo.png" alt="Habitual Logo" /> -->
       <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google">
-        Log in
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <a href="/auth/logout">
-        Log out
-        <!-- <button><img src="" alt="" /><span>Log in</span></button> -->
-      </a>
-      <!-- *If not logged in -->
-      <h2>Trending</h2>
-      <!-- *If logged in -->
-      <!-- <h2>Suggested for you</h2> -->
+      <a href="/auth/google"> Log in </a>
+      <a href="/auth/logout"> Log out </a>
+      <h2>Suggested for you</h2>
       <h1>Find the stuff you love.</h1>
+      <section class="item-cards">
+        <template id="item-template">
+          <article class="item-card">
+            <img class="item-img" src="" alt="" />
+            <section class="item-content">
+              <h3 class="item-name"></h3>
+              <div>
+                <h3 class="item-price"></h3>
+                <p class="linethrough-price"></p>
+                <p class="badge"><span class="category badge"></span></p>
+              </div>
+              <p class="item-description"></p>
+            </section>
+            <!-- TODO reviews section -->
+          </article>
+        </template>
+      </section>
     </main>
     <!-- *Footer* -->
     <footer>

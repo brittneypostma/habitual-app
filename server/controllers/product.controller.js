@@ -1,26 +1,57 @@
 const mongoose = require('mongoose')
 const Product = require('../models/product.mongo')
+const data = require('../data')
+
+exports.loadProducts = (req, res, next) => {}
 
 exports.getAllProducts = (req, res, next) => {
   Product.find()
     .exec()
     .then((products) => {
+      // const response = {
+      //   count: products.length,
+      //   products: products.map((product) => {
+      //     return {
+      //       _id: product._id,
+      //       name: product.name,
+      //       price: product.price,
+      //       productImage: product.productImage,
+      //     }
+      //   }),
+      // }
       const response = {
-        count: products.length,
-        products: products.map((product) => {
-          return {
-            _id: product._id,
-            name: product.name,
-            price: product.price,
-            productImage: product.productImage,
-          }
-        }),
+        products,
       }
       res.status(200).json(response)
     })
     .catch((error) => {
       next(error)
     })
+}
+
+exports.getProductCategories = (req, res) => {
+  Product.distinct('category')
+    .then((categories) => {
+      res.json(categories)
+    })
+    .catch((err) => console.log(err))
+}
+
+module.exports.getProductsInCategory = (req, res) => {
+  const category = req.params.category
+  const limit = Number(req.query.limit) || 0
+  const sort = req.query.sort == 'desc' ? -1 : 1
+
+  Product.find({
+    category,
+  })
+    .select(['-_id'])
+    .limit(limit)
+    .sort({ id: sort })
+    .then((products) => {
+      res.json(products)
+    })
+    .catch((err) => console.log(err))
 }
 
 exports.getOneProduct = (req, res, next) => {
@@ -70,7 +101,7 @@ exports.updateOneProduct = (req, res, next) => {
   // 	updateOps[prop.propName] = prop.propValue;
   // }
 
-  Product.update({ _id: productId }, { $set: req.body })
+  Product.updateOne({ _id: productId }, { $set: req.body })
     .exec()
     .then((result) => {
       res.status(200).json({
