@@ -60,6 +60,9 @@ async function loadProducts() {
   categories.forEach((category) => {
     let name = category.category
     let color
+    
+  // const link = product.querySelector('.item-link')
+  // link.href = `/shop/${category.id}`
     switch (name) {
       case 'shoes':
         shoes = category.items
