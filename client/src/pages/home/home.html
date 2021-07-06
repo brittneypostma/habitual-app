@@ -70,16 +70,20 @@
     <title>Habitual</title>
   </head>
   <style>
+    main {
+      padding: var(--xs);
+    }
     .item-cards {
       display: flex;
       overflow-x: auto;
       gap: var(--base);
+      padding-bottom: var(--sm);
     }
     .item-card {
       --item-width: 285px;
       box-shadow: var(--shadow-card);
       border-radius: var(--rounded-card);
-      max-width: var(--item-width);
+      width: var(--item-width);
     }
     .item-img {
       width: var(--item-width);
@@ -102,11 +106,13 @@
       font-weight: 800;
       font-size: var(--text-base);
     }
+    .item-badge {
+      justify-self: end;
+    }
   </style>
 
   <body>
     <!-- LOGGED IN -->
-    <h1>Home.html</h1>
     <!-- *Header* -->
     <header class="wrap"></header>
 
@@ -123,8 +129,8 @@
       </svg>
 
       <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google"> Log in </a>
-      <a href="/auth/logout"> Log out </a>
+      <a href="/auth/google" class="link"> Log in </a>
+      <a href="/auth/logout" class="link"> Log out </a>
       <h2>Suggested for you</h2>
       <h1>Find the stuff you love.</h1>
       <section class="item-cards">
@@ -134,12 +140,9 @@
             <img class="item-img" src="" alt="" />
             <section class="item-content">
               <h3 class="item-name"></h3>
-              <div>
-                <h3 class="item-price"></h3>
-                <p class="linethrough-price"></p>
-                <p class="badge"><span class="category badge"></span></p>
-              </div>
-              <p class="item-description"></p>
+              <h3 class="item-price"></h3>
+              <p class="badge item-badge"><span class="category badge"></span></p>
+            </div>
             </section>
             <!-- TODO reviews section -->
           </article>

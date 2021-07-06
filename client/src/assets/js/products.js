@@ -31,18 +31,18 @@ let music
 function createItemTemplate(items, color) {
   const template = document.querySelector('#item-template')
   const product = template.content.cloneNode(true)
+  const link = product.querySelector('.item-link')
   const img = product.querySelector('.item-img')
   const name = product.querySelector('.item-name')
   const price = product.querySelector('.item-price')
-  const oldPrice = product.querySelector('.linethrough-price')
   const badge = product.querySelector('.category')
   console.log({ items })
   items.forEach((item) => {
+    link.href = `/shop/${item.link}`
     img.src = item.image
     img.alt = item.name
     name.innerText = item.name
     price.innerText = `$${item.price}`
-    oldPrice.innerText = ''
     badge.innerText = item.category
     badge.style.backgroundColor = color
   })
@@ -60,9 +60,6 @@ async function loadProducts() {
   categories.forEach((category) => {
     let name = category.category
     let color
-    
-  // const link = product.querySelector('.item-link')
-  // link.href = `/shop/${category.id}`
     switch (name) {
       case 'shoes':
         shoes = category.items
@@ -83,19 +80,8 @@ async function loadProducts() {
       default:
         console.log({ category })
     }
-    // categories.items.map((item) => {
-    //   console.log({ item })
-    // })
     itemCards.appendChild(createItemTemplate(category.items, color))
   })
-
-  console.log({ shoes }, { fashion }, { music }, { gaming })
-  // data.products.forEach((categories) => {
-  //   categories = categories
-  // categories.category.items.forEach(item => {
-
-  // })
-  // })
 }
 
 loadProducts()

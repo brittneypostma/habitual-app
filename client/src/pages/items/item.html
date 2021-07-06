@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Habitual Shopping App" />
+    <meta name="theme-color" content="#ffe202" />
+    <!-- Open Graph -->
+    <meta
+      property="og:url"
+      content="https://brittneypostma.github.io/habitual-landing-page/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Habitual" />
+    <meta property="og:description" content="Habitual Shopping App" />
+    <meta
+      property="og:image"
+      content="https://brittneypostma.github.io/habitual-landing-page/images/og.jpg"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="brittneypostma.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://brittneypostma.github.io/habitual-landing-page/index.html"
+    />
+    <meta name="twitter:title" content="Habitual" />
+    <meta name="twitter:description" content="Habitual Shopping App" />
+    <meta
+      name="twitter:image"
+      content="https://brittneypostma.github.io/habitual-landing-page/images/og.jpg"
+    />
+    <!-- Site -->
+    <link rel="icon" href="../../assets/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="../../assets/images/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../../assets/site.webmanifest" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/home.css" />
+
+    <!-- Font Awesome -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    /> -->
+
+    <!-- Scripts -->
+    <!-- <script defer src="assets/js/nav-menu.js"></script> -->
+    <!-- GSAP -->
+    <!-- <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
+    ></script>
+    <script defer src="assets/js/animations.js"></script> -->
+    <script type="module" src="../../assets/js/item.js"></script>
+    <title>Habitual</title>
+  </head>
+  <style>
+    main {
+      padding: var(--xs);
+    }
+    .item-cards {
+      display: flex;
+      overflow-x: auto;
+      gap: var(--base);
+      padding-bottom: var(--sm);
+    }
+    .item-card {
+      --item-width: 285px;
+      box-shadow: var(--shadow-card);
+      border-radius: var(--rounded-card);
+      width: var(--item-width);
+    }
+    .item-img {
+      width: var(--item-width);
+      border-radius: var(--rounded-card) var(--rounded-card) 0 0;
+      max-height: 150px;
+      object-fit: cover;
+      object-position: center 10%;
+    }
+    .item-content {
+      background: var(--white);
+      padding: var(--base);
+      display: grid;
+      gap: var(--xxs);
+    }
+    .item-name {
+      font-weight: 400;
+      font-size: var(--text-base);
+    }
+    .item-price {
+      font-weight: 800;
+      font-size: var(--text-base);
+    }
+    .item-badge {
+      justify-self: end;
+    }
+  </style>
+
+  <body>
+    <!-- LOGGED IN -->
+    <!-- *Header* -->
+    <header class="wrap"></header>
+
+    <!-- *Home Page* -->
+    <main>
+      <!-- center is top left on mobile -->
+      <svg
+        class="circle"
+        viewBox="0 0 2500 5000"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="1500" cy="1500" r="2500" fill="#FFE202" />
+      </svg>
+
+      <!-- *If logged in show avatar, else show Log in with default icon. -->
+      <a href="/auth/google" class="link"> Log in </a>
+      <a href="/auth/logout" class="link"> Log out </a>
+      <h1>Item</h1>
+      <section class="item-cards">
+        <template id="item-template">
+          <a href="" class="item-link">
+          <article class="item-card">
+            <img class="item-img" src="" alt="" />
+            <section class="item-content">
+              <h3 class="item-name"></h3>
+              <h3 class="item-price"></h3>
+              <p class="badge item-badge"><span class="category badge"></span></p>
+            </div>
+            </section>
+            <!-- TODO reviews section -->
+          </article>
+        </a>
+        </template>
+      </section>
+    </main>
+    <!-- *Footer* -->
+    <footer>
+      <p class="text-sm">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        Habitual Inc.
+      </p>
+    </footer>
+  </body>
+</html>

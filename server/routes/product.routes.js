@@ -4,12 +4,13 @@ const productController = require('../controllers/product.controller')
 const { ensureAuth } = require('../controllers/auth.controller')
 
 productRouter.get('/', productController.getAllProducts)
-productRouter.get('/:productId', productController.getOneProduct)
+productRouter.get('/:link', productController.getOneProduct)
 productRouter.get('/categories', productController.getProductCategories)
 productRouter.get(
   '/category/:category',
   productController.getProductsInCategory
 )
+productRouter.get('/:category/:link', productController.itemPage)
 productRouter.post('/', ensureAuth, productController.loadProducts)
 // productRouter.patch(
 //   '/:productId',

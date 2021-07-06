@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
+const path = require('path')
 const Product = require('../models/product.mongo')
-const data = require('../data')
+
+exports.itemPage = (req, res, next) => {
+  res.sendFile(
+    path.join(__dirname, '../../client/src/pages/items', 'item.html')
+  )
+}
 
 exports.loadProducts = (req, res, next) => {}
 
@@ -55,13 +61,15 @@ module.exports.getProductsInCategory = (req, res) => {
 }
 
 exports.getOneProduct = (req, res, next) => {
-  const id = req.params.productId
-  Product.findById(id)
-    .select('_id name price productImage')
+  Product.findOne({'items.link': req.params.link})
     .exec()
     .then((product) => {
       if (product) {
-        res.status(200).json(product)
+        product.items.map(item => {
+          if (item.link === req.params.link) {
+            return res.status(200).json(item)
+          }
+        })
       } else {
         res.status(404).json({
           message: 'Product Not Found!',
