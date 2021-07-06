@@ -16,7 +16,6 @@ const UserSchema = new Schema({
   profile: {
     displayName: {
       type: String,
-      required: true,
     },
     firstName: {
       type: String,

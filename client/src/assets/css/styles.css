@@ -86,22 +86,27 @@
 }
 
 /* *Scrollbar* */
-:root {
+body {
   scrollbar-width: thin;
   scrollbar-color: var(--primary) var(--black);
 }
 
-:root::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
+  max-height: 8px;
 }
-:root::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--black);
 }
-:root::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--primary);
+  border: 1px solid var(--black);
 }
-:root::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   filter: brightness(1.2);
+}
+::-webkit-scrollbar-button {
+  height: 8px;
 }
 
 /* *Layout* */
