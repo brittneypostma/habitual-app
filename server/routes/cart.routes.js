@@ -7,7 +7,7 @@ module.exports = cartRouter
 
 //* Cart
 //* route /cart
-cartRouter.get('/', cartController.cartPage)
+cartRouter.get('/cart', cartController.cartPage)
 cartRouter.get('/:cartId', cartController.getCart)
 cartRouter.post('/', cartController.addCart)
 cartRouter.patch('/:id', cartController.editCart)

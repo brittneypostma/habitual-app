@@ -6,28 +6,6 @@ let fashion
 let gaming
 let music
 
-// function getItems() {
-//   window.onload = () => {
-//     fetch('/shop')
-//       .then((res) => res.json())
-//       .then((doc) => {
-//         categories = doc
-//         console.log({ categories })
-//         products = doc.products
-//         console.log({ products })
-//         doc.products.map((category) => {
-//           items = category.items
-//           console.log({ items })
-//           return items
-//           // category.items.map((item) => {
-//           //   return item
-//           // })
-//         })
-//       })
-//       .catch((e) => console.error(e))
-//   }
-// }
-
 function createItemTemplate(items, color) {
   const template = document.querySelector('#item-template')
   const product = template.content.cloneNode(true)
@@ -38,7 +16,7 @@ function createItemTemplate(items, color) {
   const badge = product.querySelector('.category')
   console.log({ items })
   items.forEach((item) => {
-    link.href = `/shop/${item.link}`
+    link.href = `/shop/${item.category}/${item.link}`
     img.src = item.image
     img.alt = item.name
     name.innerText = item.name

@@ -14,6 +14,7 @@
   --teal: #30d6b0;
   --blue: #4269f2;
   --orange: #fdbc1f;
+  --gray: #a6a6aa;
 
   /* *Containers* */
   --width: 80vw;
@@ -58,7 +59,7 @@
   --shadow-lg: 0 16px 24px 0 rgba(0, 0, 0, 0.06),
     0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 0 1px 0 rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-outline: 0 0 0 2px var(--accent);
+  --shadow-outline: 0 0 0 2px var(--black);
   --shadow-card: 0px 10px 20px rgba(0, 0, 0, 0.04),
     0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   --shadow-interest: 0px 16px 24px rgba(0, 0, 0, 0.06),
@@ -105,6 +106,7 @@
 
 /* *Layout* */
 body {
+  box-sizing: border-box;
   scroll-behavior: smooth;
   letter-spacing: var(--none);
   background: var(--bg-color);
@@ -166,15 +168,15 @@ h4 {
 a:not(a[role='button']) {
   font-weight: 700;
   text-decoration: none;
-  color: var(--black);
   width: max-content;
 }
 
 .link {
   border-bottom: 1px solid black;
+  color: var(--black);
 }
 
-button,
+.btn,
 a[role='button'] {
   text-decoration: none;
   cursor: pointer;
@@ -188,11 +190,10 @@ a[role='button'] {
   transition: transform 0.2s ease-in-out;
 }
 
-button:hover,
+.btn:hover,
 a[role='button']:hover {
   filter: brightness(1.02);
 }
-
 
 .badge {
   border-radius: var(--rounded-pill);

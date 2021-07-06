@@ -22,7 +22,7 @@ app.use(helmet())
 app.use(
   cors({
     // use port of frontend dev server
-    origin: 'http://localhost:3000',
+    origin: process.env.CORS_ORIGIN,
   })
 )
 
@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, '../client/src')))
 app.use('/auth', authRoutes)
 app.use('/', homeRoutes)
 app.use('/', userRoutes)
-app.use('/shop', productRoutes)
-app.use('/cart', cartRoutes)
+app.use('/', productRoutes)
+app.use('/', cartRoutes)
 
 module.exports = app

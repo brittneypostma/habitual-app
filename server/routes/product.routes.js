@@ -3,14 +3,14 @@ const productRouter = express.Router()
 const productController = require('../controllers/product.controller')
 const { ensureAuth } = require('../controllers/auth.controller')
 
-productRouter.get('/', productController.getAllProducts)
-productRouter.get('/:link', productController.getOneProduct)
-productRouter.get('/categories', productController.getProductCategories)
+productRouter.get('/shop', productController.getAllProducts)
+productRouter.get('/shop/:link', productController.getOneProduct)
+productRouter.get('/shop/categories', productController.getProductCategories)
 productRouter.get(
   '/category/:category',
   productController.getProductsInCategory
 )
-productRouter.get('/:category/:link', productController.itemPage)
+productRouter.get('/shop/:category/:link', productController.itemPage)
 productRouter.post('/', ensureAuth, productController.loadProducts)
 // productRouter.patch(
 //   '/:productId',

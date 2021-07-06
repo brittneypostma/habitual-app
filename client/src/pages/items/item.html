@@ -70,94 +70,116 @@
     <title>Habitual</title>
   </head>
   <style>
-    main {
-      padding: var(--xs);
-    }
-    .item-cards {
+    .links {
       display: flex;
-      overflow-x: auto;
-      gap: var(--base);
-      padding-bottom: var(--sm);
+      justify-content: space-between;
+      width: 100%;
+      padding: 64px 24px 24px;
     }
-    .item-card {
-      --item-width: 285px;
+    .item {
+      display: grid;
       box-shadow: var(--shadow-card);
-      border-radius: var(--rounded-card);
-      width: var(--item-width);
+      height: 100%;
     }
     .item-img {
-      width: var(--item-width);
-      border-radius: var(--rounded-card) var(--rounded-card) 0 0;
-      max-height: 150px;
+      max-height: 60vh;
+      width: 100%;
       object-fit: cover;
       object-position: center 10%;
     }
     .item-content {
       background: var(--white);
-      padding: var(--base);
       display: grid;
       gap: var(--xxs);
+      padding: 24px;
     }
     .item-name {
-      font-weight: 400;
-      font-size: var(--text-base);
+      font-weight: 800;
+      font-size: var(--heading-4);
+    }
+    .stars {
+      display: flex;
+      gap: var(--xs);
+    }
+    .rating {
+      width: max-content;
+      color: var(--black);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+    .reviews {
+      color: var(--gray);
+      font-size: var(--text-sm);
+      font-weight: 800;
+      border-bottom: 1px solid var(--gray);
+      line-height: 1.5;
     }
     .item-price {
-      font-weight: 800;
-      font-size: var(--text-base);
+      font-size: var(--heading-3);
     }
-    .item-badge {
-      justify-self: end;
+    footer {
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 24px 42px;
+    }
+    .add-to-cart {
+      background: none;
+      outline: none;
+      border-radius: var(--rounded-full);
+      border: none;
+      cursor: pointer;
+    }
+    .add-to-cart:focus {
+      box-shadow: var(--shadow-outline);
+    }
+    @media (min-width: 800px) {
+      main {
+        max-width: 50vw;
+        margin: 0 auto;
+      }
     }
   </style>
 
   <body>
-    <!-- LOGGED IN -->
-    <!-- *Header* -->
-    <header class="wrap"></header>
-
-    <!-- *Home Page* -->
+    <!-- *Item Page* -->
     <main>
-      <!-- center is top left on mobile -->
-      <svg
-        class="circle"
-        viewBox="0 0 2500 5000"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="1500" cy="1500" r="2500" fill="#FFE202" />
-      </svg>
-
-      <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google" class="link"> Log in </a>
-      <a href="/auth/logout" class="link"> Log out </a>
-      <h1>Item</h1>
-      <section class="item-cards">
-        <template id="item-template">
-          <a href="" class="item-link">
-          <article class="item-card">
-            <img class="item-img" src="" alt="" />
-            <section class="item-content">
-              <h3 class="item-name"></h3>
-              <h3 class="item-price"></h3>
-              <p class="badge item-badge"><span class="category badge"></span></p>
-            </div>
-            </section>
-            <!-- TODO reviews section -->
-          </article>
+      <header class="links">
+        <a href="/" class="back">
+          <img src="../../assets/images/icons/back.svg" alt="back" />
         </a>
+        <a href="/cart" class="cart">
+          <img src="../../assets/images/icons/cart.svg" alt="cart" />
+        </a>
+      </header>
+      <section class="item">
+        <template id="item-template">
+          <img class="item-img" src="" alt="" />
+          <section class="item-content">
+            <section class="item-heading">
+              <h1 class="item-name"></h1>
+              <div class="stars">
+                <img src="../../assets/images/icons/star.svg" alt="star" />
+                <h3 class="rating"></h3>
+                <a class="reviews" href=""></a>
+              </div>
+            </section>
+            <section class="item-options">
+              <h2 class="item-option"></h2>
+              <h3 class="option-name"></h3>
+              <div class="options"></div>
+            </section>
+          </section>
+          <footer>
+            <h2 class="item-price"></h2>
+            <button class="add-to-cart">
+              <img src="../../assets/images/icons/add-to-cart.svg" />
+            </button>
+          </footer>
+          <!-- TODO reviews section -->
         </template>
       </section>
     </main>
-    <!-- *Footer* -->
-    <footer>
-      <p class="text-sm">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        Habitual Inc.
-      </p>
-    </footer>
   </body>
 </html>
