@@ -32,6 +32,12 @@
       name="twitter:image"
       content="https://brittneypostma.github.io/habitual-landing-page/images/og.jpg"
     />
+    <meta     http-equiv="Content-Security-Policy" 
+      content="
+      font-src fonts.googleapis.com;
+        img-src 'self' https://* http://* localhost:*; 
+        child-src 'self';
+    ">
     <!-- Site -->
     <link rel="icon" href="assets/favicon.ico" />
     <link
@@ -67,16 +73,50 @@
     ></script>
     <script defer src="assets/js/animations.js"></script> -->
     <script type="module" src="assets/js/products.js"></script>
+    <script type="module" src="assets/js/user.js"></script>
     <title>Habitual</title>
   </head>
   <style>
+    header {
+      padding: 64px 24px 24px;
+      display: flex;
+      gap: var(--xxs);
+      justify-content: space-between;
+      align-items: start;
+    }
+    header section {
+      display: grid;
+      gap: var(--sm);
+    }
+    .top-text h2 {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+    }
+    .top-text h1 {
+      font-size: var(--heading-3);
+    }
+    .auth {
+      justify-items: center;
+    }
+    .avatar-btn {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: 1px solid var(--black);
+      border-radius: var(--rounded-full);
+    }
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--rounded-full);
+    }
     main {
       padding: var(--xs);
     }
     .item-cards {
       display: flex;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch; 
+      -webkit-overflow-scrolling: touch;
       gap: var(--base);
       padding-bottom: var(--sm);
     }
@@ -116,11 +156,20 @@
   </style>
 
   <body>
-    <!-- LOGGED IN -->
-    <!-- *Header* -->
-    <header class="wrap"></header>
-
-    <!-- *Home Page* -->
+    <header>
+      <section class="top-text">
+        <h2>Suggested for you</h2>
+        <h1>Find the stuff you love.</h1>
+      </section>
+      <section class="auth">
+      <template id="user">
+        <button class="avatar-btn">
+          <img src="" alt="" class="avatar" />
+        </button>
+        <a href="/auth/google" class="link auth-link"></a>
+      </section>
+      </template>
+    </header>
     <main>
       <!-- center is top left on mobile -->
       <svg
@@ -133,36 +182,24 @@
       </svg>
 
       <!-- *If logged in show avatar, else show Log in with default icon. -->
-      <a href="/auth/google" class="link"> Log in </a>
-      <a href="/auth/logout" class="link"> Log out </a>
-      <h2>Suggested for you</h2>
-      <h1>Find the stuff you love.</h1>
+
       <section class="item-cards">
         <template id="item-template">
           <a href="" class="item-link">
-          <article class="item-card">
-            <img class="item-img" src="" alt="" />
-            <section class="item-content">
-              <h3 class="item-name"></h3>
-              <h3 class="item-price"></h3>
-              <p class="badge item-badge"><span class="category badge"></span></p>
-            </div>
-            </section>
-            <!-- TODO reviews section -->
-          </article>
-        </a>
+            <article class="item-card">
+              <img class="item-img" src="" alt="" />
+              <section class="item-content">
+                <h3 class="item-name"></h3>
+                <h3 class="item-price"></h3>
+                <p class="badge item-badge">
+                  <span class="category badge"></span>
+                </p>
+              </section>
+              <!-- TODO reviews section -->
+            </article>
+          </a>
         </template>
       </section>
     </main>
-    <!-- *Footer* -->
-    <footer>
-      <p class="text-sm">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        Habitual Inc.
-      </p>
-    </footer>
   </body>
 </html>

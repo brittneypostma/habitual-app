@@ -21,7 +21,6 @@ app.use(helmet())
 
 app.use(
   cors({
-    // use port of frontend dev server
     origin: process.env.CORS_ORIGIN,
   })
 )

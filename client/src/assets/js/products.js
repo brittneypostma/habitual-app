@@ -8,13 +8,12 @@ let music
 
 function createItemTemplate(items, color) {
   const template = document.querySelector('#item-template')
-  const product = template.content.cloneNode(true)
-  const link = product.querySelector('.item-link')
-  const img = product.querySelector('.item-img')
-  const name = product.querySelector('.item-name')
-  const price = product.querySelector('.item-price')
-  const badge = product.querySelector('.category')
-  console.log({ items })
+  const content = template.content.cloneNode(true)
+  const link = content.querySelector('.item-link')
+  const img = content.querySelector('.item-img')
+  const name = content.querySelector('.item-name')
+  const price = content.querySelector('.item-price')
+  const badge = content.querySelector('.category')
   items.forEach((item) => {
     link.href = `/shop/${item.category}/${item.link}`
     img.src = item.image
@@ -25,7 +24,7 @@ function createItemTemplate(items, color) {
     badge.style.backgroundColor = color
   })
 
-  return product
+  return content
 }
 
 async function loadProducts() {

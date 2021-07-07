@@ -1,6 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const router = express.Router()
+const { getUser } = require('../controllers/auth.controller')
 
 //! user protected routes
 //* Auth with Google
@@ -13,7 +14,6 @@ router.get(
   '/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    // check if new user
     res.redirect('/home')
   }
 )
@@ -24,5 +24,7 @@ router.get('/logout', (req, res) => {
   req.logout()
   res.redirect('/')
 })
+
+router.get('/user', getUser)
 
 module.exports = router
