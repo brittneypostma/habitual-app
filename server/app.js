@@ -17,11 +17,12 @@ require('./services/passport')(passport)
 
 const app = express()
 
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+app.use(helmet())
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: false,
+//   })
+// );
 
 app.use(
   cors({
