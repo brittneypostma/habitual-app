@@ -1,10 +1,9 @@
-function createUserTemplate(google) {
-  console.log(google)
+function createUserTemplate(user) {
   const template = document.querySelector('#user')
   const content = template.content.cloneNode(true)
   const avatar = content.querySelector('.avatar')
   const authLink = content.querySelector('.auth-link')
-  if (!google) {
+  if (!user) {
     authLink.href = `/auth/google`
     authLink.innerText = `Log in`
   } else {
@@ -22,7 +21,6 @@ async function loadAvatar() {
     .then((res) => res.json())
     .catch((e) => console.error(e))
   auth.appendChild(createUserTemplate(user))
-  console.log(user)
 }
 
 loadAvatar()

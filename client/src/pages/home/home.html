@@ -32,12 +32,6 @@
       name="twitter:image"
       content="https://brittneypostma.github.io/habitual-landing-page/images/og.jpg"
     />
-    <meta     http-equiv="Content-Security-Policy" 
-      content="
-      font-src fonts.googleapis.com;
-        img-src 'self' https://* http://* localhost:*; 
-        child-src 'self';
-    ">
     <!-- Site -->
     <link rel="icon" href="assets/favicon.ico" />
     <link
@@ -102,10 +96,15 @@
       width: 32px;
       height: 32px;
       background: transparent;
-      border: 1px solid var(--black);
+      border: 0.5px solid var(--black);
       border-radius: var(--rounded-full);
     }
+    .avatar-btn:focus {
+      outline: none;
+      box-shadow: var(--shadow-outline);
+    }
     .avatar {
+      padding: 2px;
       width: 32px;
       height: 32px;
       border-radius: var(--rounded-full);
