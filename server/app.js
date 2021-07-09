@@ -18,9 +18,31 @@ require('./services/passport')(passport)
 const app = express()
 
 // app.use(helmet())
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: false,
+//   })
+// );
 app.use(
   helmet({
-    contentSecurityPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
+        frameSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
+        childSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
+        scriptSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
+        styleSrc: [
+          "'self'",
+          'https://fonts.googleapis.com',
+          'https://checkout.stripe.com',
+          'https://*.googleusercontent.com'
+        ],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com', 'https://*.googleusercontent.com'],
+        baseUri: ["'self'"],
+      },
+    },
   })
 );
 
