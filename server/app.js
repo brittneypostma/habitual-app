@@ -31,9 +31,10 @@ app.use(
         connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
         frameSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
         childSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
-        scriptSrc: ["'self'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
+        scriptSrc: ["'self'", "'unsafe-inline'", 'https://checkout.stripe.com', 'https://*.googleusercontent.com'],
         styleSrc: [
           "'self'",
+          "'unsafe-inline'",
           'https://fonts.googleapis.com',
           'https://checkout.stripe.com',
           'https://*.googleusercontent.com'
